@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>治安防控</title>
+
+  <link rel="stylesheet/less"
+        type="text/css"
+        href="./static/css/style.less" />
+  <script src="./static/js/less.js"></script>
+  <script src="./static/js/echarts.min.js"></script>
+
+  <script>
+    window.onload = () => {
+      // 基于准备好的dom，初始化echarts实例
+      const chart1 = echarts.init(document.getElementById('chart1'));
+      // 绘制图表
+      chart1.setOption({
+        title: {
+          show: true,
+          text: '人口' + '\n' + '年龄分布',
+          textStyle: {
+            color: 'rgba(145, 204, 255, 1)',
+            fontSize: '16',
+            lineHeight: 24
+          },
+          textAlign: 'center',
+          textVerticalAlign: 'center',
+          left: '29%',
+          top: '47%',
+        },
+        tooltip: {
+          trigger: 'item',
+        },
+        legend: {
+          selectedMode: false,
+          orient: 'vertical',
+          itemWidth: 8,
+          itemHeight: 8,
+          itemGap: 16,
+          right: '15%',
+          top: 'center',
+          textStyle: {
+            fontSize: 12,
+            color: 'rgba(145, 204, 255, 1)',
+          },
+          data: ['儿童期0-6岁', '少年期7-17岁', '青年期18-40岁', '中年期41-65岁', '老年期>65岁'],
+        },
+        series: [
+          {
+            name: '',
+            type: 'pie',
+            hoverAnimation: false,
+            legendHoverLink: false,
+            cursor: 'default',
+            radius: ['52%', '70%'],
+            center: ['30%', '50%'],
+            color: [
+              'rgba(255, 231, 119, 0.2)',
+              'rgba(90, 175, 255, 0.2)',
+              'rgba(55, 255, 201, 0.2)',
+              'rgba(0, 132, 255, 0.2)',
+              'rgba(25, 214, 255, 0.2)',
+            ],
+            label: {
+              show: false,
+            },
+            labelLine: {
+              show: false,
+            },
+
+            tooltip: {
+              show: false,
+            },
+
+            zlevel: 1,
+            itemStyle: {
+              normal: {
+                show: false,
+              },
+              ellipsis: {
+                show: false,
+              },
+            },
+
+            data: [
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+            ],
+          },
+          {
+            name: '',
+            type: 'pie',
+            zlevel: 2,
+            cursor: 'default',
+            hoverAnimation: false,
+            legendHoverLink: false,
+            radius: ['57%', '70%'],
+            center: ['30%', '50%'],
+            color: [
+              'rgba(255, 231, 119, 0.5)',
+              'rgba(90, 175, 255, 0.5)',
+              'rgba(55, 255, 201, 0.5)',
+              'rgba(0, 132, 255, 0.5)',
+              'rgba(25, 214, 255, 0.5)',
+            ],
+            labelLine: {
+              show: false,
+            },
+            itemStyle: {
+              normal: {
+                borderColor: '#0a1a2a',
+              },
+              ellipsis: {
+                borderColor: '#0a1a2a',
+              },
+            },
+            tooltip: {
+              show: false,
+            },
+            data: [
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+              {
+                value: 20,
+                name: '',
+              },
+            ],
+          },
+          {
+            name: '人口年龄分布',
+            type: 'pie',
+            zlevel: 3,
+            radius: ['63%', '70%'],
+            center: ['30%', '50%'],
+            color: ['rgba(255, 231, 119, 1)',
+              'rgba(90, 175, 255, 1)',
+              'rgba(55, 255, 201, 1)',
+              'rgba(0, 132, 255, 1)',
+              'rgba(25, 214, 255, 1)',],
+            label: {
+              show: false,
+            },
+            labelLine: {
+              show: false,
+            },
+            itemStyle: {
+              shadowBlur: 15,
+              shadowColor: 'rgba(0, 0, 0, 0.3)',
+              borderColor: '#0a1a2a',
+            },
+            data: [
+              {
+                value: 20,
+                name: '儿童期0-6岁',
+              },
+              {
+                value: 20,
+                name: '少年期7-17岁',
+              },
+              {
+                value: 20,
+                name: '青年期18-40岁',
+              },
+              {
+                value: 20,
+                name: '中年期41-65岁',
+              },
+              {
+                value: 20,
+                name: '老年期>65岁',
+              },
+            ],
+          },
+        ],
+      });
+
+      // 基于准备好的dom，初始化echarts实例
+      const chart2 = echarts.init(document.getElementById('chart2'));
+      // 绘制图表
+      chart2.setOption({
+        grid: {
+          left: '18%',
+          top: '10%',
+          bottom: '15%'
+        },
+        xAxis: {
+          type: 'value',
+          axisLabel: {
+            textStyle: {
+              color: "rgba(145, 204, 255, 1)",
+              fontSize: 12
+            }
+          },
+          axisTick: {
+            show: false
+          },
+          splitLine: {
+            lineStyle: {
+              type: 'dashed',
+              color: 'rgba(183, 200, 235, 0.1)'
+            }
+          }
+        },
+        yAxis: {
+          type: 'category',
+          data: ['共有产权', '回迁安置', '自建房', '自购房', '限购房', '经济房', '公租房'],
+          splitLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(183, 200, 235, 0.29)'
+            }
+          },
+          axisLabel: {
+            textStyle: {
+              color: "rgba(145, 204, 255, 1)",
+              fontSize: 12
+            }
+          }
+        },
+        series: [{
+          type: 'bar',
+          name: "",
+          barWidth: 9,
+          itemStyle: {
+            normal: {
+              label: {
+                show: false
+              },
+              color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                offset: 0,
+                color: 'rgba(0, 180, 255, 1)'
+              }, {
+                offset: 1,
+                color: 'rgba(14, 229, 232, 1)'
+              }]),
+              // barBorderRadius:15
+
+            }
+          },
+          data: [19, 29, 39, 81, 29, 29, 39]
+        }
+        ]
+      })
+
+      window.onresize = () => {
+        // 屏幕尺寸重绘时 重绘图表大小
+        chart1.resize()
+        chart2.resize()
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="page_root">
+    <img class="header_img"
+         src="./static/image/tpp.png">
+
+    <section class="header">
+      <div class="welcome">
+        <img src="./static/image/people.png">
+        刘玉洁 欢迎您
+      </div>
+      <span class="name">治安防控治安一张图</span>
+      <div class="info">
+        <img class="weather"
+             src="./static/image/weather.png">
+        <span>2022-04-25 18:00:00</span>
+        <img class="out"
+             src="./static/image/quit.png">
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="part left">
+        <div class="box">
+          <div class="title">
+            <img src="./static/image/title1.png">
+            <span>人—概况</span>
+          </div>
+          <div class="box_content">
+            <div class="item">
+              <div class="population_info">
+                <div class="population_info_imgs">
+                  <img src="./static/image/base4.png">
+                  <img src="./static/image/total-bj1.png">
+                  <div class="label">
+                    总人数
+                    <span>20054</span>
+                    人
+                  </div>
+                </div>
+
+                <div class="population_info_labels">
+                  <div class="population_info_labels_item">
+                    <img src="./static/image/flow.png">
+                    <div>
+                      流动人口
+                      <span>432</span>
+                      人
+                    </div>
+                  </div>
+                  <div class="population_info_labels_item">
+                    <img src="./static/image/h-register.png">
+                    <div>
+                      户籍人口
+                      <span>432</span>
+                      人
+                    </div>
+                  </div>
+                  <div class="population_info_labels_item">
+                    <img src="./static/image/border.png">
+                    <div>
+                      境外人口
+                      <span>432</span>
+                      人
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub_title">
+              <img src="./static/image/title3.png">
+              <span>人口年龄结构分布</span>
+              <img src="./static/image/title3.png">
+            </div>
+            <div class="item">
+              <div id="chart1"
+                   class="chart"></div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="title">
+            <img src="./static/image/title1.png">
+            <span>地—概况</span>
+          </div>
+
+          <div class="box_content">
+            <div class="area_info">
+              <div class="area_info_item">
+                <span class="label">总面积</span>
+                <div>
+                  <span>456</span>
+                  公顷
+                </div>
+              </div>
+              <div class="area_info_item">
+                <span class="label">平房</span>
+                <div>
+                  <span>456</span>
+                  个
+                </div>
+              </div>
+              <div class="area_info_item">
+                <span class="label">楼房</span>
+                <div>
+                  <span>456</span>
+                  栋
+                </div>
+              </div>
+              <div class="area_info_item">
+                <span class="label">商务楼宇</span>
+                <div>
+                  <span>456</span>
+                  栋
+                </div>
+              </div>
+            </div>
+            <div class="sub_title">
+              <img src="./static/image/title3.png">
+              <span>房屋性质统计</span>
+              <img src="./static/image/title3.png">
+            </div>
+            <div class="item">
+              <div id="chart2"
+                   class="chart"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="center">
+        <div class="center_top">
+          <img src="./static/image/secondary.png">
+          <div class="tabs">
+            <span>治安防控</span>
+            <span>治安防控</span>
+            <span class="active">治安防控</span>
+            <span>治安防控</span>
+            <span>治安防控</span>
+          </div>
+        </div>
+
+        <div class="center_bottom">
+          <div class="box">
+            <div class="title">
+              <img src="./static/image/title2.png">
+              <span>事—概况</span>
+            </div>
+
+            <div class="box_content">
+              <div class="event_info">
+
+              </div>
+              <div class="item">
+                <div class="sub_title">
+                  <img src="./static/image/title3.png">
+                  <span>频繁矛盾事件统计</span>
+                  <img src="./static/image/title3.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="part right">
+        <div class="box">
+          <div class="title">
+            <img src="./static/image/title1.png">
+            <span>组织概况</span>
+          </div>
+        </div>
+        <div class="box">
+          <div class="title">
+            <img src="./static/image/title1.png">
+            <span>物—概况</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
