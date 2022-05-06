@@ -10,6 +10,7 @@
         href="./static/css/style.less" />
   <script src="./static/js/less.js"></script>
   <script src="./static/js/echarts.min.js"></script>
+  <script src="./static/js/moment.min.js"></script>
 
   <script>
     window.onload = () => {
@@ -577,6 +578,18 @@
         chart4.resize()
         chart5.resize()
       }
+
+      getNowTime()
+
+      setInterval(() => {
+        getNowTime()
+      }, 1 * 1000)
+    }
+
+    function getNowTime() {
+      const time = moment().format('YYYY-MM-DD HH:mm:ss')
+      const timeDom = document.getElementById('time')
+      timeDom.innerText = time
     }
 
     function onChangeBtn(dom) {
@@ -619,7 +632,7 @@
       <div class="info">
         <img class="weather"
              src="./static/image/weather.png">
-        <span>2022-04-25 18:00:00</span>
+        <span id="time"></span>
         <img class="out"
              src="./static/image/quit.png">
       </div>
@@ -1051,7 +1064,7 @@
               <div class="event_info">
                 <div class="event_info_item">
                   <div class="imgs">
-                    <img src="./static/image/微信图片_20220506093515.png">
+                    <img src="./static/image/20220506093515.png">
                     <img src="./static/image/city.png">
                   </div>
                   <div class="labels">
@@ -1062,7 +1075,7 @@
 
                 <div class="event_info_item">
                   <div class="imgs">
-                    <img src="./static/image/微信图片_20220506093515.png">
+                    <img src="./static/image/20220506093515.png">
                     <img src="./static/image/city-residents.png">
                   </div>
                   <div class="labels">
@@ -1073,7 +1086,7 @@
 
                 <div class="event_info_item">
                   <div class="imgs">
-                    <img src="./static/image/微信图片_20220506093515.png">
+                    <img src="./static/image/20220506093515.png">
                     <img src="./static/image/police.png">
                   </div>
                   <div class="labels">
