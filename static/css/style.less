@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  opacity: 0;
+}
+
 .page_root {
   position: relative;
   width: 100vw;
@@ -42,7 +46,6 @@
       }
 
       font-size: 0.9375vw;
-      font-family: Microsoft YaHei;
       font-weight: 400;
       color: #E5F6FF;
     }
@@ -131,6 +134,8 @@
           .item {
             width: 100%;
             flex: 1 0;
+            display: flex;
+            flex-direction: column;
           }
 
           .sub_title {
@@ -292,7 +297,7 @@
 
           .chart {
             width: 100%;
-            height: 100%;
+            flex: 1 0;
           }
 
           .area_info {
@@ -361,6 +366,184 @@
               }
             }
           }
+
+          .org_info {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding: 0 1.77083vw;
+
+            .org_info_item {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .imgs {
+                position: relative;
+                width: 3.28125vw;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                  position: absolute;
+
+                  &:nth-child(1) {
+                    height: 2.34375vw;
+                    animation: animation5 3s linear infinite;
+                  }
+
+                  &:nth-child(2) {
+                    height: 1.71875vw;
+                    top: 1.04167vw;
+                    animation: animation4 3s linear infinite;
+                  }
+
+                  @keyframes animation4 {
+                    0% {
+                      top: 1.04167vw;
+                    }
+
+                    50% {
+                      top: 0.7vw;
+                    }
+
+                    100% {
+                      top: 1.04167vw;
+                    }
+                  }
+
+                  @keyframes animation5 {
+                    0% {
+                      opacity: 1;
+                    }
+
+                    50% {
+                      opacity: 0.6;
+                    }
+
+                    100% {
+                      opacity: 1;
+                    }
+                  }
+                }
+              }
+
+              .labels {
+                display: flex;
+                flex-direction: column;
+                margin-left: 0.83333vw;
+
+                span {
+                  &:nth-child(1) {
+                    font-size: 0.72917vw;
+                    font-weight: 400;
+                    color: #91CCFF;
+                  }
+
+                  &:nth-child(2) {
+                    font-size: 1.19792vw;
+                    font-weight: 400;
+                    color: #0084FF;
+                    margin-top: 0.3125vw;
+
+                    &::after {
+                      content: '个';
+                      color: rgba(0, 168, 255, 1);
+                      font-size: 0.67708vw;
+                      margin-left: 0.20833vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .property_info {
+            width: 100%;
+            height: 7.03125vw;
+            display: flex;
+            align-items: center;
+            padding: 0 2.08333vw;
+
+            &_item {
+              flex: 1 0;
+              height: max-content;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              border-right: 1px solid rgba(0, 168, 255, 0.2);
+              margin-left: 1.04167vw;
+
+              &:first-child {
+                margin-left: 0;
+              }
+
+              &:last-child {
+                border-right: none;
+              }
+
+              span {
+                &:nth-child(1) {
+                  font-size: 0.72917vw;
+                  font-weight: 400;
+                  color: #91CCFF;
+                }
+
+                &:nth-child(2) {
+                  font-size: 1.19792vw;
+                  font-weight: 400;
+                  color: #0084FF;
+                  margin-top: 1.04167vw;
+
+                  &::after {
+                    content: '个';
+                    color: rgba(0, 168, 255, 1);
+                    font-size: 0.67708vw;
+                    margin-left: 0.20833vw;
+                  }
+                }
+              }
+            }
+          }
+
+          .btns {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.30208vw;
+
+            span {
+              margin-left: 0.26042vw;
+              width: 3.59375vw;
+              height: 1.19792vw;
+              background: rgba(55, 141, 230, 0.2);
+              border-radius: 0.26042vw;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 0.52083vw;
+              font-weight: 400;
+              color: #91CCFF;
+              cursor: pointer;
+
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+
+            .active {
+              background: rgba(55, 141, 230, 1);
+              color: #fff;
+            }
+          }
         }
       }
     }
@@ -379,8 +562,12 @@
         width: 100%;
         margin-bottom: 0.83333vw;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
 
-        img {
+        .secondary {
           position: absolute;
           top: 0;
           left: 0;
@@ -410,6 +597,94 @@
           .active {
             color: #FFFB5F;
           }
+        }
+
+        .center_top_content {
+          width: 100%;
+          flex: 1 0;
+          background: rgba(13, 36, 75, 0.8);
+          box-shadow: 0px 0px 0.52083vw 0px rgba(0, 1, 4, 0.46);
+          border-radius: 0.52083vw;
+          padding: 1.04167vw;
+          flex-direction: column;
+          overflow: hidden;
+          display: none;
+
+          .info {
+            width: 100%;
+            height: 6.77083vw;
+            display: flex;
+            align-items: center;
+
+            .info_item {
+              flex: 1 0;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              margin-left: 0.83333vw;
+
+              img {
+                height: 3.64583vw;
+              }
+
+              .labels {
+                margin-left: 0.78125vw;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                  &:nth-child(1) {
+                    font-size: 0.88542vw;
+                    font-weight: 400;
+                    color: #91CCFF;
+                  }
+
+                  &:nth-child(2) {
+                    font-size: 1.71875vw;
+                    font-weight: 400;
+                    color: #0084FF;
+                    margin-top: 0.20833vw;
+                  }
+                }
+              }
+            }
+          }
+
+          .table_content {
+            width: 100%;
+            flex: 1 0;
+            overflow-y: scroll;
+
+            table {
+              width: 100%;
+              height: 100%;
+
+              th,
+              td {
+                margin: 0;
+                padding: 0;
+                border: none;
+                height: 1.875vw;
+              }
+
+              thead {
+                width: 100%;
+                background-color: rgba(145, 204, 255, 0.15);
+                font-size: 0.72917vw;
+                font-weight: 400;
+                color: #FFFFFF;
+              }
+
+              td {
+                font-size: 0.72917vw;
+                font-weight: 400;
+                color: #91CCFF;
+                text-align: center;
+              }
+            }
+          }
+
+
         }
       }
 
@@ -460,10 +735,80 @@
             align-items: center;
 
             .event_info {
-              width: 12.5vw;
               height: 100%;
               display: flex;
               flex-direction: column;
+              margin-left: 2.23958vw;
+              padding: 0.83333vw 0;
+
+              .event_info_item {
+                flex: 1 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                .imgs {
+                  position: relative;
+                  width: 2.60417vw;
+                  height: 2.60417vw;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  img {
+                    position: absolute;
+
+                    &:nth-child(1) {
+                      width: 100%;
+                      height: 100%;
+                      animation: animation3 6s linear infinite;
+                    }
+
+                    &:nth-child(2) {
+                      height: 1.09375vw;
+                    }
+
+                    @keyframes animation3 {
+                      0% {
+                        transform: rotate(0deg);
+                      }
+
+                      100% {
+                        transform: rotate(360deg);
+                      }
+                    }
+                  }
+                }
+
+                .labels {
+                  display: flex;
+                  flex-direction: column;
+                  margin-left: 0.9375vw;
+
+                  span {
+                    &:nth-child(1) {
+                      font-size: 0.72917vw;
+                      font-weight: 400;
+                      color: #91CCFF;
+                    }
+
+                    &:nth-child(2) {
+                      font-size: 1.09375vw;
+                      font-weight: 400;
+                      color: #0084FF;
+                      margin-top: 0.3125vw;
+
+                      &::after {
+                        content: '件';
+                        margin-left: 0.20833vw;
+                        font-size: 0.67708vw;
+                        font-weight: 400;
+                        color: rgba(0, 168, 255, 1);
+                      }
+                    }
+                  }
+                }
+              }
             }
 
             .item {
@@ -493,6 +838,11 @@
                   color: #E5F6FF;
                   margin: 0 0.26042vw;
                 }
+              }
+
+              .chart {
+                flex: 1 0;
+                width: 100%;
               }
             }
           }

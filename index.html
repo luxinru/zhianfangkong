@@ -282,11 +282,325 @@
         ]
       })
 
+      // 基于准备好的dom，初始化echarts实例
+      const chart3 = echarts.init(document.getElementById('chart3'));
+      // 绘制图表
+      chart3.setOption({
+        grid: {
+          top: '15%',
+          right: '8%',
+          left: '8%',
+          bottom: '25%'
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        xAxis: [{
+          type: 'category',
+          color: 'rgba(183, 200, 235, 0.29)',
+          data: ['校园安全', '校园安全', '校园安全', '校园安全', '校园安全', '校园安全', '校园安全', '校园安全', '校园安全', '校园安全'],
+          axisLine: {
+            lineStyle: {
+              color: '#272456'
+            }
+          },
+          axisLabel: {
+            margin: 12,
+            color: 'rgba(145, 204, 255, 1)',
+            textStyle: {
+              fontSize: 12
+            },
+          },
+        }],
+        yAxis: [{
+          axisLabel: {
+            color: 'rgba(145, 204, 255, 1)',
+          },
+          axisLine: {
+            show: false
+          },
+          splitLine: {
+            lineStyle: {
+              color: 'rgba(183, 200, 235, 0.29)',
+              type: 'dashed',
+            }
+          }
+        }],
+        series: [{
+          type: 'bar',
+          data: [100, 90, 10, 90, 90, 20, 56, 89, 20, 56],
+          barWidth: '12px',
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: 'rgba(14, 229, 232, 1)' // 0% 处的颜色
+              }, {
+                offset: 1,
+                color: 'rgba(0, 180, 255, 1)' // 100% 处的颜色
+              }], false),
+              barBorderRadius: [30, 30, 0, 0],
+            }
+          },
+          label: {
+            show: false
+          }
+        }]
+      })
+
+      // 基于准备好的dom，初始化echarts实例
+      const chart4 = echarts.init(document.getElementById('chart4'));
+      // 绘制图表
+      chart4.setOption({
+        tooltip: {
+          trigger: 'axis',
+        },
+        grid: {
+          top: '15%',
+          left: '15%',
+          right: '10%',
+          bottom: '15%',
+        },
+        xAxis: [{
+          type: 'category',
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(145, 204, 255, 0.29)',
+            }
+          },
+          axisLabel: {
+            color: 'rgba(145, 204, 255, 1)',
+            fontSize: 12
+          },
+          splitLine: {
+            show: false
+          },
+          axisTick: {
+            show: false,
+          },
+          boundaryGap: false,
+          data: ['网格力量', '网格力量', '网格力量', '网格力量', '网格力量'],
+
+        }],
+
+        yAxis: [{
+          type: 'value',
+          splitLine: {
+            show: true,
+            lineStyle: {
+              type: 'dashed',
+              color: 'rgba(145, 204, 255, 0.29)'
+            }
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(145, 204, 255, 0.29)',
+            }
+          },
+          axisLabel: {
+            margin: 12,
+            textStyle: {
+              color: 'rgba(145, 204, 255, 1)',
+
+            },
+          },
+          axisTick: {
+            show: false,
+          },
+        }],
+        series: [{
+          name: '网格力量',
+          type: 'line',
+          smooth: true, //是否平滑
+          lineStyle: {
+            normal: {
+              color: "rgba(25, 214, 255, 0.7)",
+            },
+          },
+          label: {
+            show: false,
+          },
+          areaStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: 'rgba(25, 214, 255, 0.7)'
+              },
+              {
+                offset: 1,
+                color: 'rgba(25, 214, 255, 0)'
+              }
+              ], false)
+            }
+          },
+          data: [502, 205, 332, 281, 398,]
+        }]
+      })
+
+      // 基于准备好的dom，初始化echarts实例
+      const chart5 = echarts.init(document.getElementById('chart5'));
+      // 绘制图表
+      chart5.setOption({
+        grid: {
+          left: '9%',
+          right: '10%',
+          top: '20%',
+          bottom: '10%',
+          containLabel: true
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        legend: {
+          show: true,
+          x: 'center',
+          top: '12%',
+          y: '35',
+          icon: 'stack',
+          itemWidth: 10,
+          itemHeight: 10,
+          itemGap: 20,
+          textStyle: {
+            color: 'rgba(145, 204, 255, 1)',
+            fontSize: 13,
+          },
+          data: ['正面', '负面']
+        },
+        xAxis: [
+          {
+            type: 'category',
+            boundaryGap: false,
+            axisLabel: {
+              color: 'rgba(145, 204, 255, 1)'
+            },
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: 'rgba(145, 204, 255, 0.29)'
+              }
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine: {
+              show: false,
+            },
+            data: ['05-01', '05-02', '05-02', '05-04', '05-05', '05-06', '05-07']
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value',
+            axisLabel: {
+              textStyle: {
+                color: 'rgba(145, 204, 255, 1)'
+              }
+            },
+            axisLine: {
+              lineStyle: {
+                type: 'dashed',
+                color: 'rgba(145, 204, 255, 0.29)'
+              }
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine: {
+              show: false
+            }
+          }
+        ],
+        series: [
+          {
+            name: '正面',
+            type: 'line',
+            symbol: 'circle',
+            symbolSize: 8,
+            itemStyle: {
+              normal: {
+                color: '#0092f6',
+                lineStyle: {
+                  color: "#0092f6",
+                  width: 1
+                },
+                areaStyle: {
+                  //color: '#94C9EC'
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(7,44,90,0.3)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(0,146,246,0.9)'
+                  }]),
+                }
+              }
+            },
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: '负面',
+            type: 'line',
+            symbol: 'circle',
+            symbolSize: 8,
+
+            itemStyle: {
+              normal: {
+                color: '#00d4c7',
+                lineStyle: {
+                  color: "#00d4c7",
+                  width: 1
+                },
+                areaStyle: {
+                  //color: '#94C9EC'
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: 'rgba(7,44,90,0.3)'
+                  }, {
+                    offset: 1,
+                    color: 'rgba(0,212,199,0.9)'
+                  }]),
+                }
+              }
+            },
+            data: [220, 182, 191, 210, 230, 270, 270]
+          }
+        ]
+      })
+
       window.onresize = () => {
         // 屏幕尺寸重绘时 重绘图表大小
         chart1.resize()
         chart2.resize()
+        chart3.resize()
+        chart4.resize()
+        chart5.resize()
       }
+    }
+
+    function onChangeBtn(dom) {
+      const tabs = document.getElementsByClassName('btn')
+      for (let index = 0; index < tabs.length; index++) {
+        const element = tabs[index];
+        element.className = 'btn'
+      }
+      dom.className = 'btn active'
+    }
+
+    function onChangeBtn1(dom, isShowTable = false) {
+      const tabs = document.getElementsByClassName('btn1')
+      for (let index = 0; index < tabs.length; index++) {
+        const element = tabs[index];
+        element.className = 'btn1'
+      }
+      const CenterTopContent = document.getElementById('center_top_content')
+      if (isShowTable) {
+        CenterTopContent.style.display = 'flex'
+      } else {
+        CenterTopContent.style.display = 'none'
+      }
+      dom.className = 'btn1 active'
     }
   </script>
 </head>
@@ -422,13 +736,307 @@
 
       <div class="center">
         <div class="center_top">
-          <img src="./static/image/secondary.png">
+          <img class="secondary"
+               src="./static/image/secondary.png">
           <div class="tabs">
-            <span>治安防控</span>
-            <span>治安防控</span>
-            <span class="active">治安防控</span>
-            <span>治安防控</span>
-            <span>治安防控</span>
+            <span class="btn1 active" onclick="onChangeBtn1(this)">治安防控</span>
+            <span class="btn1" onclick="onChangeBtn1(this)">治安防控</span>
+            <span class="btn1" onclick="onChangeBtn1(this, true)">治安防控</span>
+            <span class="btn1" onclick="onChangeBtn1(this)">治安防控</span>
+            <span class="btn1" onclick="onChangeBtn1(this)">治安防控</span>
+          </div>
+
+          <div id="center_top_content" class="center_top_content">
+            <div class="info">
+              <div class="info_item">
+                <img src="./static/image/street.png"
+                     alt="">
+                <div class="labels">
+                  <span>街道</span>
+                  <span>2568</span>
+                </div>
+              </div>
+
+              <div class="info_item">
+                <img src="./static/image/community.png"
+                     alt="">
+                <div class="labels">
+                  <span>社区</span>
+                  <span>2568</span>
+                </div>
+              </div>
+
+              <div class="info_item">
+                <img src="./static/image/grid.png"
+                     alt="">
+                <div class="labels">
+                  <span>网格</span>
+                  <span>2568</span>
+                </div>
+              </div>
+
+              <div class="info_item">
+                <img src="./static/image/interest.png"
+                     alt="">
+                <div class="labels">
+                  <span>兴趣点</span>
+                  <span>2568</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="table_content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>姓名</th>
+                    <th>身份证号</th>
+                    <th>政治面貌</th>
+                    <th>居住地址</th>
+                    <th>户籍性质</th>
+                    <th>居住性质</th>
+                    <th>联系电话</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                  <tr>
+                    <td>刘玉洁</td>
+                    <td>201422199502101234</td>
+                    <td>党员</td>
+                    <td>珠海市香洲区狮山路122号</td>
+                    <td>流动人口</td>
+                    <td>自购房</td>
+                    <td>19991240214</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
 
@@ -441,13 +1049,49 @@
 
             <div class="box_content">
               <div class="event_info">
+                <div class="event_info_item">
+                  <div class="imgs">
+                    <img src="./static/image/微信图片_20220506093515.png">
+                    <img src="./static/image/city.png">
+                  </div>
+                  <div class="labels">
+                    <span>城市管理</span>
+                    <span>3564</span>
+                  </div>
+                </div>
 
+                <div class="event_info_item">
+                  <div class="imgs">
+                    <img src="./static/image/微信图片_20220506093515.png">
+                    <img src="./static/image/city-residents.png">
+                  </div>
+                  <div class="labels">
+                    <span>市民服务</span>
+                    <span style="color: rgba(25, 214, 255, 1);">6578</span>
+                  </div>
+                </div>
+
+                <div class="event_info_item">
+                  <div class="imgs">
+                    <img src="./static/image/微信图片_20220506093515.png">
+                    <img src="./static/image/police.png">
+                  </div>
+                  <div class="labels">
+                    <span>社会治安</span>
+                    <span style="color: rgba(55, 255, 201, 1);">3587</span>
+                  </div>
+                </div>
               </div>
               <div class="item">
                 <div class="sub_title">
                   <img src="./static/image/title3.png">
                   <span>频繁矛盾事件统计</span>
                   <img src="./static/image/title3.png">
+                </div>
+
+                <div id="chart3"
+                     class="chart"
+                     style="margin-left: 1.25vw;">
                 </div>
               </div>
             </div>
@@ -461,11 +1105,111 @@
             <img src="./static/image/title1.png">
             <span>组织概况</span>
           </div>
+
+          <div class="box_content">
+            <div class="item">
+              <div class="org_info">
+                <div class="org_info_item">
+                  <div class="imgs">
+                    <img src="./static/image/base.png">
+                    <img src="./static/image/party-member.png">
+                  </div>
+                  <div class="labels">
+                    <span>党员</span>
+                    <span style="color: rgba(0, 132, 255, 1);">523</span>
+                  </div>
+                </div>
+
+                <div class="org_info_item">
+                  <div class="imgs">
+                    <img src="./static/image/base.png">
+                    <img src="./static/image/Party-organization.png">
+                  </div>
+                  <div class="labels">
+                    <span>党组织</span>
+                    <span style="color: rgba(25, 214, 255, 1);">523</span>
+                  </div>
+                </div>
+
+                <div class="org_info_item">
+                  <div class="imgs">
+                    <img src="./static/image/base.png">
+                    <img src="./static/image/society.png">
+                  </div>
+                  <div class="labels">
+                    <span>社会组织</span>
+                    <span style="color: rgba(55, 255, 201, 1);">523</span>
+                  </div>
+                </div>
+
+                <div class="org_info_item">
+                  <div class="imgs">
+                    <img src="./static/image/base.png">
+                    <img src="./static/image/economy.png">
+                  </div>
+                  <div class="labels">
+                    <span>经济组织</span>
+                    <span style="color: rgba(255, 231, 119, 1);">523</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub_title">
+              <img src="./static/image/title3.png">
+              <span>网格力量构成</span>
+              <img src="./static/image/title3.png">
+            </div>
+
+            <div class="item">
+              <div id="chart4"
+                   class="chart"></div>
+            </div>
+          </div>
         </div>
         <div class="box">
           <div class="title">
             <img src="./static/image/title1.png">
             <span>物—概况</span>
+          </div>
+
+          <div class="box_content">
+            <div class="property_info">
+              <div class="property_info_item">
+                <span>物业</span>
+                <span>42032</span>
+              </div>
+              <div class="property_info_item">
+                <span>摄像头</span>
+                <span>42032</span>
+              </div>
+              <div class="property_info_item">
+                <span>部件</span>
+                <span>42032</span>
+              </div>
+            </div>
+
+            <div class="sub_title">
+              <img src="./static/image/title3.png">
+              <span>舆情情感走势</span>
+              <img src="./static/image/title3.png">
+            </div>
+
+            <div class="item">
+              <div id="chart5"
+                   class="chart"></div>
+
+              <div class="btns">
+                <span class="btn active"
+                      onclick="onChangeBtn(this)">近7天</span>
+                <span class="btn"
+                      onclick="onChangeBtn(this)">近30天</span>
+                <span class="btn"
+                      onclick="onChangeBtn(this)">近3个月</span>
+                <span class="btn"
+                      onclick="onChangeBtn(this)">进1年</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
