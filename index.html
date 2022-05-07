@@ -572,11 +572,7 @@
 
       window.onresize = () => {
         // 屏幕尺寸重绘时 重绘图表大小
-        chart1.resize()
-        chart2.resize()
-        chart3.resize()
-        chart4.resize()
-        chart5.resize()
+        location.reload()
       }
 
       getNowTime()
@@ -635,7 +631,7 @@
       CenterTopContent.style.display = type === 1 ? 'flex' : 'none'
     }
 
-    function onItemClick(e , dom) {
+    function onItemClick(e, dom) {
       e.stopPropagation()
       const map_box = document.getElementById('map_box')
       map_box.style.top = dom.offsetTop + 'px'
@@ -783,7 +779,8 @@
 
       <div class="center">
         <div class="center_top">
-          <div class="map" onclick="onClickMap()">
+          <div class="map"
+               onclick="onClickMap()">
             <div class="item"
                  style="top: 30%; left: 30%;"
                  onclick="onItemClick(event, this)">
@@ -807,7 +804,8 @@
               <img src="./static/image/yellow.png">
             </div>
 
-            <div id="map_box" class="map_box">
+            <div id="map_box"
+                 class="map_box">
               <img class="map_box_bac"
                    src="./static/image/window.png">
 
@@ -872,16 +870,31 @@
                  onclick="onChangeBtnFun(2)">
           </div>
           <div class="tabs">
-            <span class="btn1 active"
-                  onclick="onChangeBtn1(this)">治安防控</span>
-            <span class="btn1"
-                  onclick="onChangeBtn1(this)">治安防控</span>
-            <span class="btn1"
-                  onclick="onChangeBtn1(this)">治安防控</span>
-            <span class="btn1"
-                  onclick="onChangeBtn1(this)">治安防控</span>
-            <span class="btn1"
-                  onclick="onChangeBtn1(this)">治安防控</span>
+            <div class="btn1 active"
+                 onclick="onChangeBtn1(this)">
+              <span>治安防控</span>
+              <img src="./static/image/on.png">
+            </div>
+            <div class="btn1"
+                 onclick="onChangeBtn1(this)">
+              <span>治安防控</span>
+              <img src="./static/image/on.png">
+            </div>
+            <div class="btn1"
+                 onclick="onChangeBtn1(this)">
+              <span>治安防控</span>
+              <img src="./static/image/on.png">
+            </div>
+            <div class="btn1"
+                 onclick="onChangeBtn1(this)">
+              <span>治安防控</span>
+              <img src="./static/image/on.png">
+            </div>
+            <div class="btn1"
+                 onclick="onChangeBtn1(this)">
+              <span>治安防控</span>
+              <img src="./static/image/on.png">
+            </div>
           </div>
 
           <div id="center_top_content"
