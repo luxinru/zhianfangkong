@@ -601,19 +601,51 @@
       dom.className = 'btn active'
     }
 
-    function onChangeBtn1(dom, isShowTable = false) {
+    function onChangeBtn1(dom) {
       const tabs = document.getElementsByClassName('btn1')
       for (let index = 0; index < tabs.length; index++) {
         const element = tabs[index];
         element.className = 'btn1'
       }
-      const CenterTopContent = document.getElementById('center_top_content')
-      if (isShowTable) {
-        CenterTopContent.style.display = 'flex'
-      } else {
-        CenterTopContent.style.display = 'none'
-      }
       dom.className = 'btn1 active'
+    }
+
+    function onChangeBtnFun(type) {
+      const tabs = document.getElementsByClassName('btn1')
+      let i = 0
+      for (let index = 0; index < tabs.length; index++) {
+        const element = tabs[index];
+        if (element.className === 'btn1 active') {
+          i = index
+        }
+      }
+
+      if (i === 0 && type === 1) {
+        return
+      } else if (i === (tabs.length - 1) && type === 2) {
+        return
+      } else {
+        tabs[i].className = 'btn1'
+        tabs[type === 1 ? i - 1 : i + 1].className = 'btn1 active'
+      }
+    }
+
+    function onSwitch(type) {
+      const CenterTopContent = document.getElementById('center_top_content')
+      CenterTopContent.style.display = type === 1 ? 'flex' : 'none'
+    }
+
+    function onItemClick(e , dom) {
+      e.stopPropagation()
+      const map_box = document.getElementById('map_box')
+      map_box.style.top = dom.offsetTop + 'px'
+      map_box.style.left = dom.offsetLeft + 'px'
+      map_box.style.display = 'flex'
+    }
+
+    function onClickMap() {
+      const map_box = document.getElementById('map_box')
+      map_box.style.display = 'none'
     }
   </script>
 </head>
@@ -649,8 +681,10 @@
             <div class="item">
               <div class="population_info">
                 <div class="population_info_imgs">
-                  <img src="./static/image/base4.png">
-                  <img src="./static/image/total-bj1.png">
+                  <div class="imgs">
+                    <img src="./static/image/base4.png">
+                    <img src="./static/image/total-bj1.png">
+                  </div>
                   <div class="label">
                     总人数
                     <span>20054</span>
@@ -749,21 +783,117 @@
 
       <div class="center">
         <div class="center_top">
-          <img class="secondary"
-               src="./static/image/secondary.png">
-          <div class="tabs">
-            <span class="btn1 active" onclick="onChangeBtn1(this)">治安防控</span>
-            <span class="btn1" onclick="onChangeBtn1(this)">治安防控</span>
-            <span class="btn1" onclick="onChangeBtn1(this, true)">治安防控</span>
-            <span class="btn1" onclick="onChangeBtn1(this)">治安防控</span>
-            <span class="btn1" onclick="onChangeBtn1(this)">治安防控</span>
+          <div class="map" onclick="onClickMap()">
+            <div class="item"
+                 style="top: 30%; left: 30%;"
+                 onclick="onItemClick(event, this)">
+              <span>xxx公园</span>
+              <img src="./static/image/blue.png">
+            </div>
+
+            <div class="item"
+                 style="top: 60%; left: 40%;"
+                 onclick="onItemClick(event, this)">
+              <span
+                    style="box-shadow: 0px 0px 0.3125vw rgba(175, 250, 179, 1) inset;border: 1px solid rgba(175, 250, 179, 1);">xxx公园</span>
+              <img src="./static/image/green.png">
+            </div>
+
+            <div class="item"
+                 style="top: 40%; left: 70%;"
+                 onclick="onItemClick(event, this)">
+              <span
+                    style="box-shadow: 0px 0px 0.3125vw rgba(255, 201, 107, 1) inset;border: 1px solid rgba(255, 201, 107, 1);">xxx公园</span>
+              <img src="./static/image/yellow.png">
+            </div>
+
+            <div id="map_box" class="map_box">
+              <img class="map_box_bac"
+                   src="./static/image/window.png">
+
+              <span class="title">网格信息员</span>
+
+              <div class="info">
+                <img src="./static/image/picture.png"
+                     alt="">
+                <div class="info_content">
+                  <span>姓名：赵恩静</span>
+                  <span>电话：153201241245</span>
+                  <span>所属网格：珠海市</span>
+                </div>
+              </div>
+
+              <div class="map_box_btns">
+                <div class="status">
+                  状态:
+                  <span>在线</span>
+                </div>
+
+                <div class="btns_box">
+                  <span>视频</span>
+                  <span>轨迹</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div id="center_top_content" class="center_top_content">
+          <div class="switch"
+               onclick="onSwitch(1)">
+            <img src="./static/image/more.png">
+          </div>
+
+          <div class="btns">
+            <div class="item">
+              <img src="./static/image/position.png">
+            </div>
+            <div class="item">
+              <img src="./static/image/amplify.png">
+            </div>
+            <div class="item">
+              <img src="./static/image/shrink.png">
+            </div>
+            <div class="item">
+              <img src="./static/image/range.png">
+            </div>
+            <div class="item">
+              <img src="./static/image/Measuring-surface.png">
+            </div>
+            <div class="item">
+              <img src="./static/image/full-screen.png">
+            </div>
+          </div>
+
+          <div class="secondary">
+            <img src="./static/image/hud.png"
+                 onclick="onChangeBtnFun(1)">
+            <img class="secondary"
+                 src="./static/image/secondary.png">
+            <img src="./static/image/hud.png"
+                 onclick="onChangeBtnFun(2)">
+          </div>
+          <div class="tabs">
+            <span class="btn1 active"
+                  onclick="onChangeBtn1(this)">治安防控</span>
+            <span class="btn1"
+                  onclick="onChangeBtn1(this)">治安防控</span>
+            <span class="btn1"
+                  onclick="onChangeBtn1(this)">治安防控</span>
+            <span class="btn1"
+                  onclick="onChangeBtn1(this)">治安防控</span>
+            <span class="btn1"
+                  onclick="onChangeBtn1(this)">治安防控</span>
+          </div>
+
+          <div id="center_top_content"
+               class="center_top_content">
+
+            <img class="close"
+                 src="./static/image/close.png"
+                 onclick="onSwitch(2)">
+
             <div class="info">
               <div class="info_item">
-                <img src="./static/image/street.png"
-                     alt="">
+                <img src="./static/image/street.png">
                 <div class="labels">
                   <span>街道</span>
                   <span style="color: rgba(0, 132, 255, 1);">2568</span>
@@ -771,8 +901,7 @@
               </div>
 
               <div class="info_item">
-                <img src="./static/image/community.png"
-                     alt="">
+                <img src="./static/image/community.png">
                 <div class="labels">
                   <span>社区</span>
                   <span style="color: rgba(25, 214, 255, 1);">2568</span>
@@ -780,8 +909,7 @@
               </div>
 
               <div class="info_item">
-                <img src="./static/image/grid.png"
-                     alt="">
+                <img src="./static/image/grid.png">
                 <div class="labels">
                   <span>网格</span>
                   <span style="color: rgba(55, 255, 201, 1);">2568</span>
@@ -789,8 +917,7 @@
               </div>
 
               <div class="info_item">
-                <img src="./static/image/interest.png"
-                     alt="">
+                <img src="./static/image/interest.png">
                 <div class="labels">
                   <span>兴趣点</span>
                   <span style="color: rgba(255, 231, 119, 1);">2568</span>

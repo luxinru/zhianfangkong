@@ -9,11 +9,22 @@
   opacity: 0;
 }
 
+@font-face {
+  font-family: 'longzhoufeng';
+  src: url('./longzhoufeng.ttf');
+}
+
+@font-face {
+  font-family: 'YouSheBiaoTiHei';
+  src: url('./YouSheBiaoTiHei-2.ttf');
+}
+
 .page_root {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('../image/bj.jpg') no-repeat;
+  background-image: radial-gradient(rgba(2, 18, 49, 0) 60%, rgba(2, 18, 49, 1) 80%), url('../image/bj.jpg');
+  background-repeat: no-repeat;
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
@@ -53,7 +64,9 @@
     .name {
       font-size: 2.39583vw;
       font-weight: 400;
+      font-family: YouSheBiaoTiHei;
       color: #EFF8FC;
+      margin-top: 0.41667vw;
     }
 
     .info {
@@ -174,64 +187,74 @@
               flex-direction: column;
               align-items: center;
 
-              img {
-                position: absolute;
+              .imgs {
+                width: 100%;
+                height: 9.375vw;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
-                &:nth-child(1) {
-                  width: 7.8125vw;
-                  top: 1vw;
-                  animation: animation1 3s linear infinite;
-                }
+                img {
+                  position: absolute;
 
-                &:nth-child(2) {
-                  width: 3vw;
-                  top: 2vw;
-                  animation: animation2 3s linear infinite;
-                }
-
-                @keyframes animation1 {
-                  0% {
-                    opacity: 1;
+                  &:nth-child(1) {
+                    width: 7.8125vw;
+                    top: 1vw;
+                    animation: animation1 3s linear infinite;
                   }
 
-                  50% {
-                    opacity: 0.3;
-                  }
-
-                  100% {
-                    opacity: 1;
-                  }
-                }
-
-                @keyframes animation2 {
-                  0% {
+                  &:nth-child(2) {
+                    width: 3vw;
                     top: 2vw;
+                    animation: animation2 3s linear infinite;
                   }
 
-                  50% {
-                    top: 1.5vw;
+                  @keyframes animation1 {
+                    0% {
+                      opacity: 1;
+                    }
+
+                    50% {
+                      opacity: 0.3;
+                    }
+
+                    100% {
+                      opacity: 1;
+                    }
                   }
 
-                  100% {
-                    top: 2vw;
+                  @keyframes animation2 {
+                    0% {
+                      top: 2vw;
+                    }
+
+                    50% {
+                      top: 1.5vw;
+                    }
+
+                    100% {
+                      top: 2vw;
+                    }
                   }
                 }
               }
 
               .label {
-                position: absolute;
+                position: relative;
                 display: flex;
                 align-items: center;
                 font-size: 0.625vw;
                 font-weight: 400;
                 color: #91CCFF;
-                top: 7.86458vw;
+                margin: -0.83333vw 0 0 0;
 
                 span {
                   font-size: 1.19792vw;
                   font-weight: 400;
                   color: #0084FF;
                   margin: 0 0.41667vw;
+                  font-family: longzhoufeng;
                 }
               }
             }
@@ -264,7 +287,6 @@
                   display: flex;
                   align-items: center;
                   font-size: 0.625vw;
-                  font-family: Microsoft YaHei;
                   font-weight: 400;
                   color: #91CCFF;
 
@@ -273,6 +295,7 @@
                     font-weight: 400;
                     color: #19D6FF;
                     margin: 0 0.41667vw;
+                    font-family: longzhoufeng;
                   }
                 }
 
@@ -337,6 +360,7 @@
                   font-weight: 400;
                   color: #0084FF;
                   margin-right: 0.20833vw;
+                  font-family: longzhoufeng;
                 }
               }
 
@@ -452,6 +476,7 @@
                     font-weight: 400;
                     color: #0084FF;
                     margin-top: 0.3125vw;
+                    font-family: longzhoufeng;
 
                     &::after {
                       content: '个';
@@ -501,6 +526,7 @@
                   font-weight: 400;
                   color: #0084FF;
                   margin-top: 1.04167vw;
+                  font-family: longzhoufeng;
 
                   &::after {
                     content: '个';
@@ -567,11 +593,85 @@
         align-items: center;
         overflow: hidden;
 
+        .switch {
+          position: absolute;
+          top: 3.85417vw;
+          left: 0;
+          width: 2.08333vw;
+          height: 2.08333vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(13, 35, 74, 0.8);
+          box-shadow: 0px 0px 10px 0px rgba(0, 1, 4, 0.46);
+          border-radius: 5px;
+          cursor: pointer;
+
+          img {
+            height: 1.45833vw;
+          }
+        }
+
+        .btns {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+
+          .item {
+            width: 2.08333vw;
+            height: 2.08333vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 35, 74, 0.8);
+            box-shadow: 0px 0px 10px 0px rgba(0, 1, 4, 0.46);
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0.41667vw;
+
+            img {
+              height: 1.45833vw;
+            }
+          }
+        }
+
         .secondary {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
+          height: 3.85417vw;
+
+          img {
+            position: absolute;
+
+            &:nth-child(1) {
+              height: 40%;
+              top: 10%;
+              left: 8%;
+              cursor: pointer;
+              z-index: 1;
+            }
+
+            &:nth-child(2) {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+
+            &:nth-child(3) {
+              height: 40%;
+              top: 10%;
+              right: 8%;
+              transform: rotate(90deg);
+              cursor: pointer;
+              z-index: 1;
+            }
+          }
         }
 
         .tabs {
@@ -600,15 +700,30 @@
         }
 
         .center_top_content {
+          position: relative;
           width: 100%;
           flex: 1 0;
-          background: rgba(13, 36, 75, 0.8);
+          background: rgba(13, 36, 75, 1);
           box-shadow: 0px 0px 0.52083vw 0px rgba(0, 1, 4, 0.46);
           border-radius: 0.52083vw;
           padding: 1.04167vw;
           flex-direction: column;
           overflow: hidden;
           display: none;
+          z-index: 1;
+
+          .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1.19792vw;
+            height: 1.19792vw;
+            background-color: rgba(15, 47, 92, 1);
+            border-radius: 50%;
+            overflow: hidden;
+            padding: 0.3125vw;
+            cursor: pointer;
+          }
 
           .info {
             width: 100%;
@@ -644,6 +759,7 @@
                     font-weight: 400;
                     color: #0084FF;
                     margin-top: 0.20833vw;
+                    font-family: longzhoufeng;
                   }
                 }
               }
@@ -685,6 +801,168 @@
           }
 
 
+        }
+
+        .map {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+
+          .item {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+
+            span {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 0.67708vw;
+              font-weight: 500;
+              color: #FFFFFF;
+              box-shadow: 0px 0px 0.3125vw rgba(82, 208, 255, 1) inset;
+              border: 1px solid rgba(82, 208, 255, 1);
+              padding: 0.15625vw 0.3125vw;
+              background-color: rgba(0, 0, 0, 0.7);
+            }
+
+            img {
+              width: 2.70833vw;
+              animation: animation6 3s linear infinite;
+              margin-top: -0.41667vw;
+            }
+
+            @keyframes animation6 {
+              0% {
+                opacity: 1;
+              }
+
+              50% {
+                opacity: 0.5;
+              }
+
+              100% {
+                opacity: 1;
+              }
+            }
+          }
+
+          .map_box {
+            position: absolute;
+            width: 16.77083vw;
+            padding: 0.36458vw 0.9375vw;
+            display: none;
+            flex-direction: column;
+
+            .map_box_bac {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+            }
+
+            .title {
+              position: relative;
+              font-size: 0.9375vw;
+              font-family: Alibaba PuHuiTi;
+              font-weight: 600;
+              font-style: italic;
+              color: rgba(158, 255, 247, 1);
+
+              background: linear-gradient(rgba(158, 255, 247, 0.7) 60%, rgba(255, 255, 255, 0.7) 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            .info {
+              position: relative;
+              width: 100%;
+              height: 5.625vw;
+              display: flex;
+              margin-top: 1.45833vw;
+
+              img {
+                height: 100%;
+              }
+
+              .info_content {
+                flex: 1 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 0.83333vw;
+
+                span {
+                  flex: 1 0;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  padding: 0.52083vw 0;
+                  font-size: 0.625vw;
+                  font-family: Alibaba PuHuiTi;
+                  font-weight: 400;
+                  color: #E7F3F9;
+                  border-bottom: 1px solid rgba(144, 232, 237, 0.54);
+                }
+              }
+            }
+
+            .map_box_btns {
+              position: relative;
+              width: 100%;
+              height: 1.14583vw;
+              display: flex;
+              align-items: center;
+              margin-top: 0.83333vw;
+
+              .status {
+                display: flex;
+                font-size: 0.67708vw;
+                font-family: Adobe Heiti Std;
+                font-weight: normal;
+                color: #FFFFFF;
+                margin-left: 0.83333vw;
+
+                span {
+                  color: rgba(17, 255, 207, 1);
+                }
+              }
+
+              .btns_box {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                margin-left: 1.66667vw;
+
+                span {
+                  width: 2.60417vw;
+                  height: 1.14583vw;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 0.625vw;
+                  font-family: Alibaba PuHuiTi;
+                  font-weight: 500;
+                  color: #FFFFFF;
+                  border-radius: 0.10417vw;
+
+                  &:nth-child(1) {
+                    background: rgba(56, 123, 215, 1);
+                  }
+
+                  &:nth-child(2) {
+                    background: rgba(84, 164, 52, 1);
+                    margin-left: 0.83333vw;
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
@@ -797,6 +1075,7 @@
                       font-weight: 400;
                       color: #0084FF;
                       margin-top: 0.3125vw;
+                      font-family: longzhoufeng;
 
                       &::after {
                         content: '件';
