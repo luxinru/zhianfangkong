@@ -23,12 +23,12 @@
           text: '人口' + '\n' + '年龄分布',
           textStyle: {
             color: 'rgba(145, 204, 255, 1)',
-            fontSize: '16',
+            fontSize: '14',
             lineHeight: 24
           },
           textAlign: 'center',
           textVerticalAlign: 'center',
-          left: '29%',
+          left: '28.5%',
           top: '47%',
         },
         tooltip: {
@@ -39,7 +39,7 @@
           orient: 'vertical',
           itemWidth: 8,
           itemHeight: 8,
-          itemGap: 16,
+          itemGap: 12,
           right: '15%',
           top: 'center',
           textStyle: {
@@ -597,33 +597,13 @@
       dom.className = 'btn active'
     }
 
-    function onChangeBtn1(dom) {
-      const tabs = document.getElementsByClassName('btn1')
-      for (let index = 0; index < tabs.length; index++) {
-        const element = tabs[index];
-        element.className = 'btn1'
+    function onChangeHeaderBtn(dom) {
+      const btns = document.getElementsByClassName('header_btns_btn')
+      for (let index = 0; index < btns.length; index++) {
+        const element = btns[index];
+        element.className = 'header_btns_btn'
       }
-      dom.className = 'btn1 active'
-    }
-
-    function onChangeBtnFun(type) {
-      const tabs = document.getElementsByClassName('btn1')
-      let i = 0
-      for (let index = 0; index < tabs.length; index++) {
-        const element = tabs[index];
-        if (element.className === 'btn1 active') {
-          i = index
-        }
-      }
-
-      if (i === 0 && type === 1) {
-        return
-      } else if (i === (tabs.length - 1) && type === 2) {
-        return
-      } else {
-        tabs[i].className = 'btn1'
-        tabs[type === 1 ? i - 1 : i + 1].className = 'btn1 active'
-      }
+      dom.className = 'header_btns_btn active'
     }
 
     function onSwitch(type) {
@@ -652,18 +632,37 @@
          src="./static/image/tpp.png">
 
     <section class="header">
-      <div class="welcome">
-        <img src="./static/image/people.png">
-        刘玉洁 欢迎您
+      <div class="part part1">
+        <div class="info"></div>
+        <div class="header_btns">
+          <span class="header_btns_btn active"
+                onclick="onChangeHeaderBtn(this)">治安防控</span>
+          <span class="header_btns_btn"
+                onclick="onChangeHeaderBtn(this)">治安防控</span>
+          <span class="header_btns_btn"
+                onclick="onChangeHeaderBtn(this)">治安防控</span>
+        </div>
       </div>
       <span class="name">治安防控治安一张图</span>
-      <div class="info">
-        <img class="weather"
-             src="./static/image/weather.png">
-        <span id="time"></span>
-        <img class="out"
-             src="./static/image/quit.png">
+      <div class="part part2">
+        <div class="info">
+          <img class="head"
+               src="./static/image/people.png">
+          <span>刘玉洁 欢迎您</span>
+          <span id="time"></span>
+          <img class="out"
+               src="./static/image/quit.png">
+        </div>
+        <div class="header_btns">
+          <span class="header_btns_btn"
+                onclick="onChangeHeaderBtn(this)">治安防控</span>
+          <span class="header_btns_btn"
+                onclick="onChangeHeaderBtn(this)">治安防控</span>
+          <span class="header_btns_btn"
+                onclick="onChangeHeaderBtn(this)">治安防控</span>
+        </div>
       </div>
+
     </section>
 
     <section class="content">
@@ -804,6 +803,29 @@
               <img src="./static/image/yellow.png">
             </div>
 
+            <div class="item_1"
+                 style="top: 25%; left: 20%;"
+                 onclick="onItemClick(event, this)">
+              <img src="./static/image/report to the police.png"
+                   alt="">
+              <img src="./static/image/aperture.png"
+                   alt="">
+            </div>
+
+            <div class="item_2"
+                 style="top: 70%; left: 60%;"
+                 onclick="onItemClick(event, this)">
+              <img src="./static/image/mark-1.png"
+                   alt="">
+            </div>
+
+            <div class="item_3"
+                 style="top: 30%; left: 50%;"
+                 onclick="onItemClick(event, this)">
+              <img src="./static/image/mark-2.png"
+                   alt="">
+            </div>
+
             <div id="map_box"
                  class="map_box">
               <img class="map_box_bac"
@@ -861,39 +883,26 @@
             </div>
           </div>
 
-          <div class="secondary">
-            <img src="./static/image/hud.png"
-                 onclick="onChangeBtnFun(1)">
-            <img class="secondary"
-                 src="./static/image/secondary.png">
-            <img src="./static/image/hud.png"
-                 onclick="onChangeBtnFun(2)">
-          </div>
           <div class="tabs">
-            <div class="btn1 active"
-                 onclick="onChangeBtn1(this)">
-              <span>治安防控</span>
-              <img src="./static/image/on.png">
+            <div>
+              <span>2654</span>
+              <span>人概况数量</span>
             </div>
-            <div class="btn1"
-                 onclick="onChangeBtn1(this)">
-              <span>治安防控</span>
-              <img src="./static/image/on.png">
+            <div>
+              <span style="color: rgba(25, 214, 255, 1);">2654</span>
+              <span>地概况数量</span>
             </div>
-            <div class="btn1"
-                 onclick="onChangeBtn1(this)">
-              <span>治安防控</span>
-              <img src="./static/image/on.png">
+            <div>
+              <span style="color: rgba(55, 255, 201, 1);">2654</span>
+              <span>事概况数量</span>
             </div>
-            <div class="btn1"
-                 onclick="onChangeBtn1(this)">
-              <span>治安防控</span>
-              <img src="./static/image/on.png">
+            <div>
+              <span style="color: rgba(90, 175, 255, 1);">2654</span>
+              <span>物概况数量</span>
             </div>
-            <div class="btn1"
-                 onclick="onChangeBtn1(this)">
-              <span>治安防控</span>
-              <img src="./static/image/on.png">
+            <div>
+              <span style="color: rgba(255, 231, 119, 1);">2654</span>
+              <span>组织概况数量</span>
             </div>
           </div>
 
