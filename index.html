@@ -606,19 +606,10 @@
       dom.className = 'header_btns_btn active'
     }
 
-    function onChangeMapBtn(dom) {
-      const btns = document.getElementsByClassName('btns_item')
-      for (let index = 0; index < btns.length; index++) {
-        const element = btns[index];
-        element.className = 'btns_item'
-      }
-      dom.className = 'btns_item active'
-    }
-
     function onSwitch(type) {
       const CenterTopContent = document.getElementById('center_top_content')
       CenterTopContent.style.display = type === 1 ? 'flex' : 'none'
-      
+
       const btns = document.getElementsByClassName('btns_item')
       for (let index = 0; index < btns.length; index++) {
         const element = btns[index];
@@ -878,22 +869,22 @@
           </div>
 
           <div class="btns">
-            <div class="btns_item" onclick="onChangeMapBtn(this)">
+            <div class="btns_item">
               <img src="./static/image/position.png">
             </div>
-            <div class="btns_item" onclick="onChangeMapBtn(this)">
+            <div class="btns_item">
               <img src="./static/image/amplify.png">
             </div>
-            <div class="btns_item" onclick="onChangeMapBtn(this)">
+            <div class="btns_item">
               <img src="./static/image/shrink.png">
             </div>
-            <div class="btns_item" onclick="onChangeMapBtn(this)">
+            <div class="btns_item">
               <img src="./static/image/range.png">
             </div>
-            <div class="btns_item" onclick="onChangeMapBtn(this)">
+            <div class="btns_item">
               <img src="./static/image/Measuring-surface.png">
             </div>
-            <div class="btns_item" onclick="onChangeMapBtn(this)">
+            <div class="btns_item">
               <img src="./static/image/full-screen.png">
             </div>
           </div>
