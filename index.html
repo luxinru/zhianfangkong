@@ -16,6 +16,7 @@
     window.onload = () => {
       // 基于准备好的dom，初始化echarts实例
       const chart1 = echarts.init(document.getElementById('chart1'));
+      console.log('window :>> ', [window]);
       // 绘制图表
       chart1.setOption({
         title: {
@@ -40,8 +41,10 @@
           itemWidth: 8,
           itemHeight: 8,
           itemGap: 12,
+          type: 'scroll',
           right: '15%',
           top: 'center',
+          padding: [10, 0],
           textStyle: {
             fontSize: 12,
             color: 'rgba(145, 204, 255, 1)',
